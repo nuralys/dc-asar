@@ -40,7 +40,7 @@
 		<div class="cr">
 			<div class="logo_poisk">
 				<div class="logo">
-					<a href="index.html"><img src="/img/logo.png" alt=""/></a>
+					<a href="/"><img src="/img/logo.png" alt="Дисконтный клуб Асар"/></a>
 				</div>
 				<div class="poisk">
 					<form action="/search">
