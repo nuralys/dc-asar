@@ -141,6 +141,7 @@ i.fa.fa-caret-down {
     position: absolute;
     background-color: #323232;
     width: 100%;
+    padding-left: 0;
 }
 .sb {
     height: 300px;
