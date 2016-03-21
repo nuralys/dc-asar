@@ -32,9 +32,13 @@
 	<div class="container">
 		<div class="cr">
 			<?php echo $this->fetch('content'); ?>
+		</div>
+		<div class="clear">
+		</div>
 	</div>
-	</div>
+</div>
 	<?php echo $this->element('footer'); ?>
+	
 	<div id="modal1" class="modal_div"> <!-- скрытый див с уникальным id = modal1 -->
 	<span class="modal_close"></span>
 	<div class="title_z">Регистрация компании</div>

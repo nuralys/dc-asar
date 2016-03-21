@@ -28,7 +28,7 @@
                           <p>Партнеров</p>
                     </div>
                 </div>
-                <a href="polucheni_card.html" target="_blank" class="button1"></a>
+                <a href="polucheni_card.html" target="_blank" class="button1">Приобрести карту</a>
             </div>
        </div>
        <div class="banner_border">
