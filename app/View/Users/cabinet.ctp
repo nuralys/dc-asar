@@ -3,9 +3,15 @@
 
 // debug($data);
 // debug($referals);
-// debug($piramida);
+// debug($piramida);?>
+<div class="piramidu">
+<ul><li>1
+<?php
 echo $piramida;
-debug($getChildrens['Children']) ;
+?>
+</li></ul>
+</div>
+//debug($getChildrens['Children']) ;
 
 
 ?>

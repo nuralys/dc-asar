@@ -1,7 +1,7 @@
-<div class="title admin_t">
+<div class=" admin_t">
 	<h2>Страницы</h2>
 </div>
-
+<div class="cr">
 <table>
 	<tr>
 		<th>ID</th>
@@ -12,7 +12,8 @@
 	<tr>
 		<td><?=$item['Page']['id'];?></td>
 		<td><?=$item['Page']['title'];?></td>
-		<td><?php echo $this->Html->link('Редактировать', array('action' => 'edit', $item['Page']['id'])); ?></td>
-	</tr>
+		tr>
+	<td><?php echo $this->Html->link('Редактировать', array('action' => 'edit', $item['Page']['id'])); ?></td>
 	<?php endforeach; ?>
 </table>
+</div>

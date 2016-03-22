@@ -149,7 +149,7 @@ class UsersController extends AppController{
 	}
 	protected function _recNotEmpty($value = array()){
 		$html = '';
-		$html .= '<ul>';
+		$html .= '<ul class="test">';
 		// debug('_recNotEmpty');
 		// debug($value);
 			foreach($value as $key => $value){
@@ -162,7 +162,7 @@ class UsersController extends AppController{
 	protected function _recEmpty($value = array()){
 		$html = '';
 		foreach ($value as $key => $value) {
-			$html .= '<ul>';
+			$html .= '<ul >';
 				$html .= '<li>'.$key;
 				if(!empty($value['Children'])){
 					$html .= $this->_recNotEmpty($value['Children']);
@@ -173,18 +173,19 @@ class UsersController extends AppController{
 		return $html;
 	}
 	protected function _rec($value = array()){
-		debug(1);
-		debug($value);
+		//debug(1);
+		//debug($value);
 		$html = '';
-		
+		$i=1;
 		foreach ($value as $key => $value) {
-			$html .= '<ul>';
+			$html .= '<ul >';
 			$html .= '<li>'.$key;
 			if(!empty($value['Children'])){
 			$html .= $this->_rec($value['Children']);
 			}
 			$html.='</li>';
 			$html .= '</ul>';
+			$i++;
 		}
 		return $html;
 	}

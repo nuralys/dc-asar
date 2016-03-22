@@ -28,7 +28,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array('cake.generic'));
+		echo $this->Html->css(array('cake.generic','style'));
 
 		echo $this->Html->script(array('ckeditor/ckeditor', 'jquery.min', 'jquery.imgareaselect'));
 		echo $this->fetch('meta');
@@ -38,7 +38,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 </head>
 <body>
 <header>
-		
+		<div class="cr">
+			<div class="title_admin">
+				<a href="">Панель администратора</a>
+			</div>
+		</div>
 		<section class="head">
 			<div class="cr">
 				<div class="logo">
@@ -47,7 +51,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 					</a>
 
 				</div>
-				<nav class="top_menu">
+				<nav class="top_menu_admin">
 					<div class="top_menu_item">
 						<a href="/admin/cards">Дисконтные карты</a>
 					</div>
@@ -71,15 +75,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			</div>
 		</section>
 	</header>
-
-		<div class="content">
+	<div class="cr">
+		<div class="content_admin">
 
 			<?php echo $this->Session->flash('good'); ?>
 			<?php echo $this->Session->flash('bad'); ?>
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		
+	</div>	
 		
 	
 	<?php //echo $this->element('sql_dump'); ?>

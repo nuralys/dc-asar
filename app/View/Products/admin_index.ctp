@@ -1,5 +1,5 @@
 <h1>Список товаров</h1>
-<a href="/admin/products/add">Добавить новый товар</a>
+<a href="/admin/products/add" class="admin_add">Добавить новый товар</a>
 
  <?php if(!empty($data)): ?>
 

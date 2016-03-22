@@ -1,7 +1,7 @@
-<div class="title admin_t">
+<div class=" admin_t">
 	<h2>Список компании</h2>
 </div>
-	<a href="companies/add">Добавить компанию</a>
+	<a class="admin_add"href="companies/add">Добавить компанию</a>
 <table>
 	<tr>
 		<th>ID</th>

@@ -1450,3 +1450,9 @@ footer p {
     padding: 30px 7px;
 }
 }
+.piramidu ul  > li {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 10px;
+    background: #000;
+}

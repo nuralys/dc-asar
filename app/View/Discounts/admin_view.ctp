@@ -1,7 +1,7 @@
-<div class="title admin_t">
+<div class=" admin_t">
 	<h2><?=$data['Company']['title'];?> : Скидки</h2>
 </div>
-	<a href="discounts/add">Добавить скидку</a>
+	<a class="admin_add" href="discounts/add">Добавить скидку</a>
 <table>
 	<tr>
 		<th>ID</th>

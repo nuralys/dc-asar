@@ -1,4 +1,4 @@
-	<div class="admin_model"><a href="/admin/news/add" class="admin_button model">Добавить новость</a></div>
+	<div class="admin_model"><a href="/admin/news/add" class="admin_add">Добавить новость</a></div>
 <ul class="news_admin_container">
 	<?php foreach($data as $item): ?>
 		<li class="news_item_admin">
