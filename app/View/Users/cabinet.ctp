@@ -5,11 +5,11 @@
 // debug($referals);
 // debug($piramida);?>
 <div class="piramidu">
-<ul><li>1
+<ul>
 <?php
 echo $piramida;
 ?>
-</li></ul>
+</ul>
 </div>
 //debug($getChildrens['Children']) ;
 

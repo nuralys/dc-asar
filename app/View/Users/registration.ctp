@@ -1,8 +1,7 @@
 
-<div class="title admin_t">
-		<h2>Регистрация</h2>
-	</div>
-	
+<div class="admin_enter reg">
+				<div class="title_admin">Регистраиця</div>
+<div class="form_enter">	
 <?php 
 
 echo $this->Form->create('User');
@@ -13,4 +12,5 @@ echo $this->Form->input('password_repeat', array('label' => 'Повторите 
 echo $this->Form->input('fio', array('label' => 'ФИО', 'class' => 'admin_input_f model '));
 echo $this->Form->end('Зарегистрироваться');
 ?>
+</div>
 </div>

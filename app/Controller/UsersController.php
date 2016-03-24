@@ -153,7 +153,8 @@ class UsersController extends AppController{
 		// debug('_recNotEmpty');
 		// debug($value);
 			foreach($value as $key => $value){
-				$html .= '<li>'.$key.'</li>';
+				$html .= '<li><div>'.$key.'</div></li>';
+
 			}
 		$html .= '</ul>';
 		return $html;
@@ -163,7 +164,7 @@ class UsersController extends AppController{
 		$html = '';
 		foreach ($value as $key => $value) {
 			$html .= '<ul >';
-				$html .= '<li>'.$key;
+				$html .= '<li><div>'.$key.'</div>';
 				if(!empty($value['Children'])){
 					$html .= $this->_recNotEmpty($value['Children']);
 				}
@@ -179,7 +180,7 @@ class UsersController extends AppController{
 		$i=1;
 		foreach ($value as $key => $value) {
 			$html .= '<ul >';
-			$html .= '<li>'.$key;
+			$html .= '<li><div><img src="/img/pol_car2.png"/>'.$key.'</div>';
 			if(!empty($value['Children'])){
 			$html .= $this->_rec($value['Children']);
 			}
