@@ -55,7 +55,7 @@
             <?php foreach($data as $item): ?>
                 <li>
                     <div class="first_lvl">
-                        <a href="/discount/<?=$item['Discount']['alias']?>"><img src="img/tour.jpg" alt="<?php echo $item['Discount']['title'] ?>" title="<?php echo $item['Discount']['title'] ?>"/></a>
+                        <a href="/discount/<?=$item['Discount']['alias']?>"><img src="/img/discounts/thumbs/<?=$item['Discount']['img']?>" alt="<?php echo $item['Discount']['title'] ?>" title="<?php echo $item['Discount']['title'] ?>"/></a>
                         <div class="poloska">
                            <a href="/discount/<?=$item['Discount']['alias']?>" title="<?php echo $item['Discount']['title'] ?>"><p><?php echo $item['Discount']['title'] ?></p></a>
                             <div class="discount">

@@ -2,7 +2,7 @@
 
 class DiscountsController extends AppController {
 
-	public $uses = array('Discount', 'Company', 'City');
+	public $uses = array('Discount', 'Company', 'City', 'Category');
 	public $components = array('Paginator');
 	public function home(){
 		
@@ -30,9 +30,29 @@ class DiscountsController extends AppController {
 		$this->set(compact('data'));
 	}
 
-	public function admin_index(){
-		$data = $this->Discount->find('all');
-		$this->set(compact('data'));
+	public function admin_add(){
+		if($this->request->is('post')){
+			$this->Discount->create();
+			
+			$slug = strtolower(Inflector::slug($this->request->data['Discount']['title']));
+			$data[] = $this->request->data['Discount'];
+			$data[] = array('alias'=>$slug);
+			$data = array_merge($data[0],$data[1]);
+			
+			if(!isset($data['img']['name']) || !$data['img']['name']){
+			 	unset($data['img']);
+			}
+
+			if($this->Discount->save($data)){
+				$this->Session->setFlash('Сохранено', 'default', array(), 'good');
+				// debug($data);
+				return $this->redirect($this->referer());
+			}else{
+				$this->Session->setFlash('Ошибка', 'default', array(), 'bad');
+			}
+		}
+		$cats = $this->Category->find('list');
+		$this->set(compact('cats'));
 	}
 
 	public function index($page_alias = null){
