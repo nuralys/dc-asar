@@ -1,4 +1,4 @@
-<?php //debug($category) ?>
+<?php //debug($discounts) ?>
 <div class="title">
 	<h1><?=$category['Category']['title'] ?></h1>
 	<p>Любой текст</p>
@@ -16,7 +16,7 @@
 	<?php foreach($discounts as $item): ?>
 		<li>
 			<div class="first_lvl">
-				<a href="/discount/<?=$item['Discount']['alias']?>" title="<?php echo $item['Discount']['title'] ?>"><img src="/img/tour.jpg" alt="<?php echo $item['Discount']['title'] ?>" title="<?php echo $item['Discount']['title'] ?>"></a>
+				<a href="/discount/<?=$item['Discount']['alias']?>" title="<?php echo $item['Discount']['title'] ?>"><img src="/img/discounts/thumbs/<?=$item['Discount']['img']?>" alt="<?php echo $item['Discount']['title'] ?>" title="<?php echo $item['Discount']['title'] ?>"></a>
 				<div class="poloska">
 					<a href="/discount/<?=$item['Discount']['alias']?>" title="<?php echo $item['Discount']['title'] ?>"><p><?=$item['Discount']['title'];?></p></a>
 					<div class="discount">
@@ -60,7 +60,7 @@
 			</div>
 		</div>
 
-	<div class="page_schet">
+	<!-- <div class="page_schet">
 						
 		<ul>
 			<li class="pager-previo last"><a href="/node?page=1" title="На следующую страницу"><i class="fa fa-angle-double-left"></i></a></li>
@@ -75,11 +75,34 @@
 			<li><a href="">9</a></li>
 			<li class="pager-next last"><a href="/node?page=1" title="На следующую страницу"><i class="fa fa-angle-double-right"></i></a></li>
 		</ul>
-	</div>
+	</div> -->
 	<div class="map_vk">
                 <div class="map_bg">
                     <div class="map">
-                        <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=5yj6a47IS0FP9lrM_dUD8E8NbY1cUYPI&width=100%&height=100%"></script>
+                        <div id="map" style="width: 100%; height: 400px;"></div>
+<div id="location">
+LatLng(54.98, 82.89)
+</div>
+  <script>
+   DG.then(function () {
+        var map = DG.map('map', {
+            center: [51.159, 71.439],
+            zoom: 7
+        });
+         map.locate({setView: true, watch: true})
+            .on('locationfound', function(e) {
+                DG.marker([e.latitude, e.longitude]).addTo(map);
+                map.setZoom(15);
+            })
+            .on('locationerror', function(e) {
+                console.log(e);
+                alert("Location access denied.");
+            });
+<?php foreach($discounts as $item): ?>
+        DG.marker([<?=$item['Discount']['coordinate_lat']?>, <?=$item['Discount']['coordinate_lng']?>]).addTo(map).bindPopup("<?=$item['Discount']['title']?>");
+<?php endforeach ?>
+    });
+</script>
                     </div>
                 </div>
                 <div class="vk">

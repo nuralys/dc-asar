@@ -17,7 +17,7 @@ class CategoriesController extends AppController{
 			// 	'recursive' => -1
 			// 	));
 			$this->Paginator->settings = array(
-				'fields' => array('id', 'title', 'discount', 'img', 'alias'),
+				'fields' => array('id', 'title', 'discount', 'img', 'alias', 'coordinate_lat', 'coordinate_lng'),
 				'recursive' => -1,
 				'limit' => 3,
 				);
@@ -49,7 +49,7 @@ class CategoriesController extends AppController{
 		// 	));
 		$this->Paginator->settings = array(
 			'conditions' => array('Discount.category_id' => $ids),
-			'fields' => array('id', 'title', 'discount', 'img', 'alias'),
+			'fields' => array('id', 'title', 'discount', 'img', 'alias', 'coordinate_lat', 'coordinate_lng'),
 			'recursive' => -1,
 			'limit' => 3
 			);
