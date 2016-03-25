@@ -12,12 +12,16 @@
 	<h1><?=$data['Discount']['title'] ?></h1>
 	<p>Любой текст</p>
 	<div class="soc_seti glav">
-		<ul>
-			<li><img src="/img/klass.png" alt="" title=""></li>
-			<li><img src="/img/facebook.png" alt="" title=""></li>
-			<li><img src="/img/vk.png" alt="" title=""></li>
-			<li><img src="/img/twitter.png" alt="" title=""></li>
-		</ul>
+		<script type="text/javascript">(function() {
+		  if (window.pluso)if (typeof window.pluso.start == "function") return;
+		  if (window.ifpluso==undefined) { window.ifpluso = 1;
+			var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+			s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+			s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+			var h=d[g]('body')[0];
+			h.appendChild(s);
+		  }})();</script>
+		<div class="pluso" data-background="transparent" data-options="medium,square,line,horizontal,counter,theme=01" data-services="vkontakte,odnoklassniki,facebook,twitter,google"></div>
 	</div>
 </div>
 <div class="content_osnovnoi">

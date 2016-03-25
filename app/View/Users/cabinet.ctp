@@ -1,4 +1,4 @@
-<p><a href="/users/edit">Редактировать профиль</a></p>
+<p><a href="/users/edit" class="edit_prof">Редактировать профиль</a></p>
 <?php 
 
 // debug($data);
