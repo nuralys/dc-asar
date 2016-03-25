@@ -42,7 +42,7 @@
 				<?php endif; ?>
 				</div>
 				<div class="card">
-					<img src="/img/card.png" alt="Как получить дисконтную карточку" title=""/>
+					<a href="/page/get_card"><img src="/img/card.png" alt="Как получить дисконтную карточку" title=""/></a>
 				</div>
 			</div>
 			<div class="map_bg">

@@ -6,7 +6,13 @@ class DiscountsController extends AppController {
 	public $components = array('Paginator');
 	public function home(){
 		
-		$data = $this->Discount->find('all');
+		$this->Paginator->settings = array(
+				'fields' => array('id', 'title', 'discount', 'img', 'alias', 'coordinate_lat', 'coordinate_lng'),
+				'recursive' => -1,
+				'limit' => 3,
+				);
+		$data = $this->Paginator->paginate('Discount');
+
 		$this->view = 'home';
 		$title_for_layout = 'Дисконтный клуб Асар';
 		$this->set(compact('title_for_layout', 'data'));
@@ -33,7 +39,7 @@ class DiscountsController extends AppController {
 	public function admin_add(){
 		if($this->request->is('post')){
 			$this->Discount->create();
-			
+
 			$slug = strtolower(Inflector::slug($this->request->data['Discount']['title']));
 			$data[] = $this->request->data['Discount'];
 			$data[] = array('alias'=>$slug);

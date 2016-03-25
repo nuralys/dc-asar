@@ -4,21 +4,7 @@ App::uses('AppController', 'Controller');
 
 class PagesController extends AppController {
 
-	public $uses = array('Page', 'News', 'Product');
-
-	public function home(){
-		$news = $this->News->find('all', array(
-			'limit' => 4,
-			'order' => array('date' => 'desc')
-		));
-		$recommended = $this->Product->find('all', array(
-			'conditions' => array('category_id' => 5)
-			));
-
-		$this->view = 'home';
-		$title_for_layout = 'Дисконтный клуб Асара';
-		$this->set(compact('news', 'title_for_layout', 'recommended'));
-	}
+	public $uses = array('Page', 'Product');
 
 	public function admin_index(){
 		$data = $this->Page->find('all');
@@ -70,4 +56,25 @@ class PagesController extends AppController {
 		$meta['description'] = $page['Page']['description'];
 		$this->set(compact('page_alias', 'page', 'title_for_layout', 'meta'));
 	}
+
+	public function get_card(){
+		App::uses('CakeEmail', 'Network/Email');
+		if(!empty($this->data)){
+			$email = new CakeEmail('default'); //smtp
+			$email->from(array('info@dc-asar.kz' => 'Дисконтный клуб - dc-asar.kz'))
+			->to('info@dc-asar.kz')
+			->subject('Новые письмо с сайта');
+			$message = 'Text';
+			if( $email->send($message) ){
+				$this->Session->setFlash('Письмо успешно отправлено', 'default', array(), 'good');
+				//unset($message);
+				return $this->redirect(FULL_BASE_URL);
+			}else{
+				$this->Session->setFlash('Ошибка!', 'default', array(), 'bad');
+				return $this->redirect($this->referer());
+			}
+		}
+	
+	}
+
 }

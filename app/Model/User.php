@@ -8,8 +8,12 @@ class User extends AppModel{
 	            'className'  => 'Card',
 	            // 'conditions' => array('Recipe.approved' => '1'),
 	            // 'order'      => 'Recipe.created DESC'
+	        ),
+	        'Referal' => array(
+	        	'className' => 'Referal'
 	        )
 	    );
+	// public $
 
 	public $validate = array(
 		'username' => array(

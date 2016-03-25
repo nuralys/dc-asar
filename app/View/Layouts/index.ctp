@@ -31,6 +31,8 @@
 	<?php echo $this->element('header'); ?>
 	<div class="container">
 		<div class="cr">
+		<?php echo $this->Session->flash('good'); ?>
+			<?php echo $this->Session->flash('bad'); ?>
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div class="clear">

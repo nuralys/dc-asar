@@ -11,7 +11,3 @@ echo $piramida;
 ?>
 </ul>
 </div>
-//debug($getChildrens['Children']) ;
-
-
-?>
