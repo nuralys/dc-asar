@@ -129,6 +129,26 @@ class UsersController extends AppController{
 		$this->set(compact('data', 'referals_tree', 'childrens', 'getChildrens', 'piramida'));
 	}
 
+	public function marketing(){
+		if(!$this->Auth->user()){
+			return $this->redirect($this->Auth->redirectUrl());
+		}
+		$id = $this->Auth->user();
+		$user = $this->User->findById($id['id']);
+		
+		$user_id = $id['id'];
+		$referals_tree = $this->Referal->find('threaded');
+		$referals = $this->Referal->find('all');
+		$users = $this->User->find('all');
+		$getChildrens = $this->_getChildrens($referals, $user_id, $users);
+		$piramida = $this->_piramida($getChildrens);
+		// $childrens = $this->_getUserId($referals_tree, $user_id);
+		// debug($referals);
+		// debug($getChildrens);
+		// die();
+		$this->set(compact('data', 'referals_tree', 'childrens', 'getChildrens', 'piramida'));
+	}
+
 	protected function _piramida($data = array()){
 		$html = '';
 		if(empty($data['Children'])){
