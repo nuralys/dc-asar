@@ -445,7 +445,7 @@ text-decoration:none
   margin-bottom: 15px;
 }
 .map_bg {
-    width: 66%;
+    width: 77%;
     border: 1px solid #ccc;
     overflow: hidden;
     float: left;
@@ -1223,6 +1223,9 @@ text-decoration:none;
     width:auto;
     padding:0 10px;
   }
+  .map_bg {
+    width: 65%;
+}
   .page {
      margin-bottom: 0px
 }
@@ -1335,6 +1338,9 @@ text-decoration:none;
     margin-top: 10px;
     /* float: right; */
 }
+.vk {
+     width: auto; 
+}
 }
 @media only screen and (max-width : 778px) {
 .map_vk {
@@ -1346,7 +1352,7 @@ text-decoration:none;
 }
 .vk {
     float: right;
-    width: 32%;
+	
 }
 .modal_div {
     margin-left: -281px;
@@ -1358,6 +1364,9 @@ text-decoration:none;
 .poisk,.logo  {
     width: 100%;
     text-align: center;
+}
+.map_bg {
+    width: 60%;
 }
 .bottom_menu{
   display: none;
@@ -1418,14 +1427,21 @@ footer p {
 .form_item_bottom label {
      float: none;
 }
+
 }
 @media only screen and (max-width : 500px) {
 .slid_schetchik {
     width: 100%;
     margin-bottom: 12px;
 }
-.banner_border,.vk {
+.banner_border {
      float: none; 
+    width: 50%;
+    margin: 0 auto;
+}
+.vk{
+	clear:both;
+	 float: none; 
     width: 50%;
     margin: 0 auto;
 }
@@ -1462,8 +1478,12 @@ footer p {
 
 }
 @media only screen and (max-width : 420px){
-.banner_border, .vk {
+.banner_border {
     width: 60%;
+}
+.vk{
+	width:auto;
+    clear: both;
 }
 .glavnaia li,.turizm li{
     width: 99%;
