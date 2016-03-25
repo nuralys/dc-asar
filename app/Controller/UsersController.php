@@ -136,7 +136,7 @@ class UsersController extends AppController{
 		}else{
 			foreach($data['Children'] as $key => $value){
 			
-				$html .= '<li>'.$key;
+				$html .= '<li><div><img src="/img/pol_car2.png"/><span>'.$key.'</span></div>';
 				// debug($value);
 				if(!empty($value['Children'])){
 
@@ -186,7 +186,7 @@ class UsersController extends AppController{
 		// die('DIE');
 		foreach ($value as $key => $value) {
 			$html .= '<ul >';
-			$html .= '<li><div><img src="/img/pol_car2.png"/>'.$key.'</div>';
+			$html .= '<li><div><img src="/img/pol_car2.png"/><span>'.$key.'</span></div>';
 			if(!empty($value['Children'])){
 				$html .= $this->_rec($value['Children']);
 			}
