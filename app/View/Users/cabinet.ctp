@@ -2,7 +2,7 @@
 <p><span>Аккаунт:</span> orb.effect@mail.ru</p>
 <p><span>ФИО:</span> Петров Петр</p>
 <p><a href="/users/marketing">Маркетинг</a></p>
-<p><a href="/users/edit">Редактировать профиль</a></p>
+<p><a href="/users/edit" class="edit_prof">Редактировать профиль</a></p>
 <?php 
 
 // debug($data);
